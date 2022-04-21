@@ -93,9 +93,9 @@ class ProfileInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Field(title: 'Name', subtitle: 'Reetika Khera'),
-        Field(title: 'Contact', subtitle: '9719934276'),
-        Field(title: 'Address', subtitle: '21 Aparna RiverView, Dayal Bagh Agra'),
+        Field(title: 'Name', subtitle: 'Juhi Sharma'),
+        Field(title: 'Contact', subtitle: '971xxxxx26'),
+        Field(title: 'Address', subtitle: '21, New Society, Dayal Bagh Agra'),
       ],
     );
   }
@@ -114,7 +114,7 @@ class BookingsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 324,
+      width: double.infinity,
       height: 76,
       padding: const EdgeInsets.fromLTRB(16,8,16,8),
       margin: const EdgeInsets.only(top:8, bottom:8),
@@ -141,7 +141,7 @@ class BookingsCard extends StatelessWidget {
                     height: 60.0,
                     width: 60.0,
                     child: Image.asset(image,
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

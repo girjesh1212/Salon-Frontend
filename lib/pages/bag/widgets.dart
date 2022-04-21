@@ -79,7 +79,7 @@ class BagCard extends StatelessWidget {
                       height: 60.0,
                       width: 60.0,
                       child: Image.asset(image,
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.cover,
                     ),
                     ),
                   ),
@@ -219,15 +219,12 @@ class BottomOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 20,
-      child: Row(
-        children: const [
-          AddItemBox(),
-          SizedBox(width: 58),
-          ProceedBox(),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: const [
+        AddItemBox(),
+        ProceedBox(),
+      ],
     );
   }
 }

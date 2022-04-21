@@ -9,8 +9,8 @@ const kSearchFontColor = Color(0xFF787878);
 const kSearchFontWeight = FontWeight.w500;
 
 //ListItem
-const kFontSize = 16.0 ;
-const kFontWeight = FontWeight.w700 ;
+const kFontSize = 14.0 ;
+const kFontWeight = FontWeight.w600 ;
 const kFontColor = Color(0xFF787878);
 
 //Arrow

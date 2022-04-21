@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart' ;
 import 'package:salon_app/pages/home/constants.dart' ;
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
+import 'package:salon_app/pages/global_constants.dart';
 
 //Top Bar 
 class TopBarTitle extends StatelessWidget {
@@ -15,7 +15,7 @@ class TopBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700, color: Color(0xFF25082C)),
+      style: TextStyle(fontSize: kHeadingSize, fontWeight: FontWeight.w700, color: Color(0xFF25082C)),
     );
   }
 }
@@ -28,7 +28,7 @@ class Heading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: const TextStyle(
+      style: TextStyle(
       fontSize: kHeadingSize,
       fontWeight: kHeadingWeight,
       color: kHeadingColor,
@@ -44,7 +44,7 @@ class SmallCardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: kTitleSize,
         fontWeight: kTitleWeight,
         color: kTitleColor,
@@ -60,7 +60,7 @@ class SmallCardSubtitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: const TextStyle(
+      style:  TextStyle(
         fontSize: kSubtitleSize,
         fontWeight: kSubtitleWeight,
         color: kSubtitleColor,
@@ -82,8 +82,8 @@ class SmallCard extends StatefulWidget {
   State<SmallCard> createState() => _SmallCardState();
 }
 class _SmallCardState extends State<SmallCard> {
-  Icon addIcon = const Icon(Icons.add, color: Colors.white, size: 24.0);
-  Icon deleteIcon =  const Icon(Icons.check, color: Colors.white, size: 18.0);
+  Icon addIcon = Icon(Icons.add, color: Colors.white, size: 24.0 * (1/375)*screenWidth!);
+  Icon deleteIcon =  Icon(Icons.check, color: Colors.white, size: 18.0 * (1/375)*screenWidth!);
   
   bool _icon = true ;  
   void changeIcon(){
@@ -95,42 +95,42 @@ class _SmallCardState extends State<SmallCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+      padding: EdgeInsets.fromLTRB(16.0 * (1/375)*screenWidth!, 8.0 * (1/375)*screenWidth!, 16.0 * (1/375)*screenWidth!, 8.0 * (1/375)*screenWidth!),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(8.0 * (1/375)*screenWidth!),
                     child: Container(
-                      height: 60.0,
-                      width: 60.0,
+                      height: 60.0 * (1/375)*screenWidth!,
+                      width: 60.0 * (1/375)*screenWidth!,
                       child: Image.asset(widget.image,
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.cover,
                     ),
                     ),
                   ),
 
-                const SizedBox(width: 16.0),
+                SizedBox(width: 16.0 * (1/375)*screenWidth!),
 
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SmallCardTitle(text: widget.title),
-                    Container(height: 8.0),
+                    Container(height: 8.0 * (1/375)*screenWidth!),
                     Row(
                       children: [
                         SmallCardSubtitle(text: widget.time + ' min'),
                         
                         Container(
-                          margin: const EdgeInsets.all(4.0),
-                          height: 4.0,
-                          width: 4.0,
+                          margin: EdgeInsets.all(4.0 * (1/375)*screenWidth!),
+                          height: 4.0 * (1/375)*screenWidth!,
+                          width: 4.0 * (1/375)*screenWidth!,
                           decoration: BoxDecoration(
                             color: kHeadingColor,
-                            borderRadius: BorderRadius.circular(4.0),
+                            borderRadius: BorderRadius.circular(4.0 * (1/375)*screenWidth!),
                           ),
                         ),
 
@@ -145,10 +145,10 @@ class _SmallCardState extends State<SmallCard> {
           GestureDetector(
             onTap: changeIcon,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(4.0),
+              borderRadius: BorderRadius.circular(4.0 * (1/375)*screenWidth!),
                 child: Container(
-                  height: 24.0,
-                  width: 24.0,
+                  height: 24.0 * (1/375)*screenWidth!,
+                  width: 24.0 * (1/375)*screenWidth!,
                   color: kMainPurpleColor,
                   child: _icon ? addIcon : deleteIcon,
                 ),
@@ -172,7 +172,7 @@ class CategoryBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+      padding: EdgeInsets.only(top: 16.0 * (1/375)*screenWidth!, bottom: 16.0 * (1/375)*screenWidth!),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -194,7 +194,7 @@ class CategoryCardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: kCategoryCardTitleSize,
         fontWeight: kCategoryCardTitleWeight,
         color: kCategoryCardTitleColor,
@@ -210,7 +210,7 @@ class CategoryCardSubtitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: kCategoryCardSubtitleSize,
         fontWeight: kCategoryCardSubtitleWeight,
         color: kCategoryCardSubtitleColor,
@@ -256,8 +256,8 @@ class CategoryCard extends StatefulWidget {
   State<CategoryCard> createState() => _CategoryCardState();
 }
 class _CategoryCardState extends State<CategoryCard> {
-  Icon deleteIcon =  const Icon(Icons.check, color: Colors.white, size: 32.0);
-  Icon addIcon = const Icon(Icons.add, color: Colors.white, size: 38.0);
+  Icon deleteIcon =  Icon(Icons.check, color: Colors.white, size: 32.0 * (1/375)*screenWidth!);
+  Icon addIcon = Icon(Icons.add, color: Colors.white, size: 38.0 * (1/375)*screenWidth!);
   
   bool _icon = true ;  
   void changeIcon(){
@@ -269,106 +269,115 @@ class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16, bottom: 16),
+      padding: EdgeInsets.only(top: 16 * (1/375)*screenWidth!, bottom: 16 * (1/375)*screenWidth!),
       child: Stack(
         children: [
           Column(
             children: [
-              Container(
-                width: 329.0,
-                height: 196.0,
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(16.0),
-                      topRight: Radius.circular(16.0),
+              AspectRatio(
+                aspectRatio: 1.7,
+                child: Container(
+                  width: double.infinity,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16.0 * (1/375)*screenWidth!),
+                        topRight: Radius.circular(16.0 * (1/375)*screenWidth!),
+                      ),
+                      child: Image.asset(widget.image,
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
-                    child: Image.asset(widget.image,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
+                ),
               ),
         
-              Container(
-                width: 329,
-                height: 138,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(16.0),
-                    bottomRight: Radius.circular(16.0),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF081D2C).withOpacity(0.08),
-                      blurRadius: 10,
-                      spreadRadius: 0.0,  
-                      offset: const Offset(0.0, 0.0),
+              AspectRatio(
+                aspectRatio: 2.36,
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(16.0 * (1/375)*screenWidth!),
+                      bottomRight: Radius.circular(16.0 * (1/375)*screenWidth!),
                     ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CategoryCardTitle(text: widget.title),
-                        // const SizedBox(height: 2),
-                        CategoryCardSubtitle(text: widget.time + ' min'),
-                        const SizedBox(height: 12),
-                        Row(
-                          children: [
-                            const StarRating(),
-                            const SizedBox(width: 8),
-                            CategoryCardSubtitle(text: widget.numOfRatings + ' ratings')
-                          ]
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF081D2C).withOpacity(0.08),
+                        blurRadius: 10,
+                        spreadRadius: 0.0,  
+                        offset: const Offset(0.0, 0.0),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(width: 32 * (1/375)*screenWidth!),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CategoryCardTitle(text: widget.title),
+                          CategoryCardSubtitle(text: widget.time + ' min'),
+                          SizedBox(height: 12 * (1/375)*screenWidth!),
+                          Row(
+                            children: [
+                              const StarRating(),
+                              SizedBox(width: 8 * (1/375)*screenWidth!),
+                              CategoryCardSubtitle(text: widget.numOfRatings + ' ratings')
+                            ]
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                          ),
+              ),
+          ]),
+        Positioned(
+          top: 0.52*(screenWidth!-48),
+          right: (screenWidth! - 48)*0.05,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                width: 80 * (1/375)*screenWidth!,
+                height: 40 * (1/375)*screenWidth!,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0 * (1/375)*screenWidth!),
+                  color: Colors.white,
+                  boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF000000).withOpacity(0.1),
+                          blurRadius: 10,
+                          spreadRadius: 0.0,  
+                          offset: const Offset(0.0, 0.0),
                         ),
                       ],
-                    ),
-                    GestureDetector(
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CategoryCardSubtitle(text: 'Rs'),
+                    const SizedBox(width: 2),
+                    CategoryCardTitle(text: widget.price),
+                  ]
+                ),
+              ),
+              SizedBox(height: 35 * (1/375)*screenWidth!),
+              GestureDetector(
                       onTap: changeIcon,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(8.0 * (1/375)*screenWidth!),
                           child: Container(
-                            height: 38.0,
-                            width: 38.0,
+                            height: 38.0 * (1/375)*screenWidth!,
+                            width: 38.0 * (1/375)*screenWidth!,
                             color: kMainPurpleColor,
                             child: _icon ? addIcon: deleteIcon,
                           ),
                       ),
                     ),
-                  ],
-                ),
-            ),
-          ]),
-        Positioned(
-          top: 174,
-          left: 225,
-          child: Container(
-            width: 80,
-            height: 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              color: Colors.white,
-              boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF000000).withOpacity(0.1),
-                      blurRadius: 10,
-                      spreadRadius: 0.0,  
-                      offset: const Offset(0.0, 0.0),
-                    ),
-                  ],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CategoryCardSubtitle(text: 'Rs'),
-                const SizedBox(width: 2),
-                CategoryCardTitle(text: widget.price),
-              ]
-            ),
+            ],
           ),
         ),
       ]),

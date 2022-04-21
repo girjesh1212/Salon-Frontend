@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:salon_app/pages/bag/widgets.dart' ;
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'dart:io' show Platform;
+import 'package:salon_app/pages/global_constants.dart' ;
 
 
 class BagPage extends StatefulWidget {
@@ -14,17 +14,13 @@ class BagPage extends StatefulWidget {
 }
 
 class _BagPageState extends State<BagPage> {
-  var List = [
+  List<BagCard> list = [
       BagCard(image: 'public/images/facial.jpg', title: 'Gold Facial', time: '40', amount: '450'),
       BagCard(image: 'public/images/legwaxing.jpg', title: 'Leg Waxing', time: '50', amount: '550'),
     ];
 
-    static const Color mainPurpleColor = Color(0xFFBC4CE3) ;
-    int _selectedIndex = 0;
-
     void _onItemTapped(int index) {
       setState(() {
-        _selectedIndex = index;
         Navigator.popAndPushNamed(context, index.toString());
       });
     }
@@ -43,50 +39,37 @@ class _BagPageState extends State<BagPage> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         items: [
-          BottomNavigationBarItem(activeIcon: SvgPicture.asset('public/icons/home.svg', color: mainPurpleColor), icon: SvgPicture.asset('public/icons/home.svg'),label: ''),
-          BottomNavigationBarItem(activeIcon: SvgPicture.asset('public/icons/search.svg', color: mainPurpleColor), icon: SvgPicture.asset('public/icons/search.svg'),label: ''),
-          BottomNavigationBarItem(activeIcon: SvgPicture.asset('public/icons/bag.svg', color: mainPurpleColor), icon: SvgPicture.asset('public/icons/bag.svg'),label: ''),
-          BottomNavigationBarItem(activeIcon: SvgPicture.asset('public/icons/profile.svg', color: mainPurpleColor), icon: SvgPicture.asset('public/icons/profile.svg'),label: ''),
+          BottomNavigationBarItem(icon: SvgPicture.asset('public/icons/home.svg'),label: ''),
+          BottomNavigationBarItem(icon: SvgPicture.asset('public/icons/search.svg'),label: ''),
+          BottomNavigationBarItem(icon: SvgPicture.asset('public/icons/bag.svg', color: mainPurpleColor),label: ''),
+          BottomNavigationBarItem(icon: SvgPicture.asset('public/icons/profile.svg'),label: ''),
         ],
       ),
 
-        body: Stack(
-          children: [
-            NestedScrollView(
-              headerSliverBuilder: (context, innerBoxIdScrolled) => [
-                  SliverAppBar(
-                  title: TopBarTitle(text: 'My bag'),
-                  centerTitle: true,
-                  backgroundColor: Colors.white,
-                ),
-              ], 
+        body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIdScrolled) => [
+              SliverAppBar(
+              title: TopBarTitle(text: 'My bag'),
+              centerTitle: true,
+              backgroundColor: Colors.white,
+              floating: true,
+            ),
+          ], 
 
-              body: Stack(
-                alignment: Alignment.center,
+          body: ListView(
+                padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
                 children: [
-                  ListView(
-                    padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
-                    children: [
-                      Column(children: List),
-                      Container(
-                        width: double.infinity,
-                        height: 1,
-                        color: const Color(0xFFF1F1F1),
-                      ),
-                      Totalling(time: '70', amount: '1100'),
-                      const SizedBox(height: 100),
-                    ],
+                  Column(children: list),
+                  Container(
+                    width: double.infinity,
+                    height: 1,
+                    color: const Color(0xFFF1F1F1),
                   ),
+                  Totalling(time: '70', amount: '1100'),
+                  const SizedBox(height: 100),
                   const BottomOptions(),
                 ],
               ),
-                ),
-             Container(
-              height: Platform.isIOS ? 35 : 0,
-              width: double.infinity,
-              color: Colors.white,
-            ),
-          ],
           ),
       );
   }

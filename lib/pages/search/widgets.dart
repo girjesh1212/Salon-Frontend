@@ -85,10 +85,8 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width:312,
-      height:56,
-      color: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 32.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
