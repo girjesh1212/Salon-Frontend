@@ -19,28 +19,32 @@ Following are the available screens in the app.
 ### Home Screen
 
 This is the landing screen of the app. This screen shows popular services, recently used services and a list of all the services for a particular store.
+
 <img src="/images/home1.png" alt="Home screen 1" width="200"/>
-<!-- ![Home screen 1](/images/home1.png) -->
-![Home screen 2](/images/home2.png)
+<img src="/images/home2.png" alt="Home screen 2" width="200"/>
 
 **** 
 
 ### Search Screen
 A user can search for a particular service on this screen. 
-![Search screen](/images/search.png)
+
+<img src="/images/search.png" alt="Search screen" width="200"/>
 
 
 **** 
 
 ### Bag Screen
 This shows the added services in the bag, user can checkout from this page.
-![Bag screen](/images/bag.png)
+
+<img src="/images/bag.png" alt="Bag screen" width="200"/>
 
 **** 
 
 ### User Details
 This section shows the details of user *i.e. name, phone, address.*
-![Profile](/images/profile.png)
+
+<img src="/images/profile.png" alt="Profile" width="200"/>
 
 User can also see their past bookings.
-![Bookings](/images/bookings.png)
+
+<img src="/images/bookings.png" alt="Bookings" width="200"/>
