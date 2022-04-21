@@ -41,10 +41,9 @@ This shows the added services in the bag, user can checkout from this page.
 **** 
 
 ### User Details
-This section shows the details of user *i.e. name, phone, address.*
+- This section shows the details of user *i.e. name, phone, address.*
+- User can also see their past bookings.
 
 <kbd> <img src="/images/profile.png" alt="Profile" width="200"/> </kbd>
-
-User can also see their past bookings.
 
 <kbd> <img src="/images/bookings.png" alt="Bookings" width="200"/> </kbd>
