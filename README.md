@@ -20,15 +20,15 @@ Following are the available screens in the app.
 
 This is the landing screen of the app. This screen shows popular services, recently used services and a list of all the services for a particular store.
 
-<img src="/images/home1.png" alt="Home screen 1" width="200"/>
-<img src="/images/home2.png" alt="Home screen 2" width="200"/>
+<kbd> <img src="/images/home1.png" alt="Home screen 1" width="200"/> </kbd>
+<kbd> <img src="/images/home2.png" alt="Home screen 2" width="200"/> </kbd>
 
 **** 
 
 ### Search Screen
 A user can search for a particular service on this screen. 
 
-<img src="/images/search.png" alt="Search screen" width="200"/>
+<kbd> <img src="/images/search.png" alt="Search screen" width="200"/> </kbd>
 
 
 **** 
@@ -36,15 +36,15 @@ A user can search for a particular service on this screen.
 ### Bag Screen
 This shows the added services in the bag, user can checkout from this page.
 
-<img src="/images/bag.png" alt="Bag screen" width="200"/>
+<kbd> <img src="/images/bag.png" alt="Bag screen" width="200"/> </kbd>
 
 **** 
 
 ### User Details
 This section shows the details of user *i.e. name, phone, address.*
 
-<img src="/images/profile.png" alt="Profile" width="200"/>
+<kbd> <img src="/images/profile.png" alt="Profile" width="200"/> </kbd>
 
 User can also see their past bookings.
 
-<img src="/images/bookings.png" alt="Bookings" width="200"/>
+<kbd> <img src="/images/bookings.png" alt="Bookings" width="200"/> </kbd>
